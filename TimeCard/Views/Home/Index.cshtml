@@ -1,0 +1,101 @@
+﻿@model TimeCard.Models.ViewModelDbContext
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+<script>
+
+    $('#my_modal').on('show.bs.modal', function (e) {
+        var bookId = $(e.relatedTarget).data('book-id');
+        $(e.currentTarget).find('input[name="bookId"]').val(bookId);
+    });
+
+
+</script>
+
+<div class="row" style="padding:5%;">
+    <div class="col-sm-2">
+        <div>
+            <img src="http://placehold.it/150x150">
+        </div>
+        <br>
+        <div class="btn-group-vertical">
+            <button href="#my_modal" data-toggle="modal" data-book-id="my_id_value" type="button" class="btn btn-success btn-lg"> Clock In</button>
+            <br>
+            <button href="#" data-toggle="modal" data-book-id="" type="button" class="btn btn-primary btn-lg"> Change Course</button>
+            <br>
+            <button href="#" data-toggle="modal" data-book-id="" type="button" class="btn btn-danger btn-lg"> Clock Out</button>
+
+            @{ @Html.Partial("GetGameListing");  }
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="container">
+            <h3>@DateTime.Now</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Mary</td>
+                        <td>Moe</td>
+                        <td>mary@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+        <div class="col-sm-4">
+            <div class="container">
+                <h2>Pay period:</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>john@example.com</td>
+                        </tr>
+                        <tr>
+                            <td>Mary</td>
+                            <td>Moe</td>
+                            <td>mary@example.com</td>
+                        </tr>
+                        <tr>
+                            <td>July</td>
+                            <td>Dooley</td>
+                            <td>july@example.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
